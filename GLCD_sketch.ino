@@ -146,6 +146,18 @@ void loop() {
     lcd.print("abcdefghijklmnopqrstuv");
     lcd.FontPos(3, 24);
     lcd.print("ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅ", true);
+  } else if (ix == 25) {
+    lcd.clear();
+    lcd.kprint( 0,  0, "01234567890123456");
+    lcd.kprint( 0, 12, "ABCDEFGHIJKLMNOPQ");
+    lcd.kprint( 0, 24, "あいうえおかきくけこ漢字も");
+    lcd.kprint( 0, 36, "アイウエオカキクケ表示できます！");
+  } else if (ix == 26) {
+    lcd.clear();
+    lcd.kprint32( 0,  0, "ABCDEFGH");
+    lcd.kprint32( 0, 24, "abcdefgh");
+  } else if (ix == 27) {
+    logo();
     uint8_t userFont[5] = {
       0x42, 0x61, 0x51, 0x49, 0x46
       /*
@@ -159,18 +171,6 @@ void loop() {
     lcd.setFont(0, userFont);
     lcd.FontPos(0, 24);
     lcd.put(0);
-  } else if (ix == 25) {
-    lcd.clear();
-    lcd.kprint( 0,  0, "01234567890123456");
-    lcd.kprint( 0, 12, "ABCDEFGHIJKLMNOPQ");
-    lcd.kprint( 0, 24, "あいうえおかきくけこ漢字も");
-    lcd.kprint( 0, 36, "アイウエオカキクケ表示できます！");
-  } else if (ix == 26) {
-    lcd.clear();
-    lcd.kprint32( 0,  0, "ABCDEFGH");
-    lcd.kprint32( 0, 24, "abcdefgh");
-  } else if (ix == 27) {
-    logo();
   }
   if (ix < 24)
     delay(100);
